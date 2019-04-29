@@ -1,7 +1,8 @@
 # gradientdescent
 Simple gradient descent/ascent examples with tensorflow
 
-1. **Minimize a function** ([1_tf_GD.py](https://github.com/sgttwld/gradientdescent/blob/master/1_tf_GD.py)): Find the argument of a function where the minimal value is achieved. 
+1. **Minimize a function**: 
+* [scalar function of one variable](https://github.com/sgttwld/gradientdescent/blob/master/1_tf_GD.py): Find the argument of a function where the minimal value is achieved. 
 
 2. **Maximize an expected value**:
 * [discrete probability, exact expectation](https://github.com/sgttwld/gradientdescent/blob/master/2_tf_GD_prob.py): Find the discrete probability distribution that maximizes the expected value of a given function.
