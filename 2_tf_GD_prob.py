@@ -39,11 +39,8 @@ with tf.Session() as sess:
     
     ## initializing
     sess.run(init)
-    obj_curr = obj.eval(session=sess)
-    obj0 = obj_curr
-    
-    print('f(t) = ', obj_curr)
-        
+    obj0 = 0
+            
     for n in range(0,numEp):
         
         ## run gradient descent
@@ -51,20 +48,20 @@ with tf.Session() as sess:
         
         ## evaluation
         obj_curr = obj.eval(session=sess)
-        p_curr = t.eval(session=sess)
         if n % 50 == 0:
-            print('ep:',n,'f(t) = ', obj_curr)
+            print('ep:',n,'E[U] = ', obj_curr)
         if abs(obj_curr-obj0) < precision:
             break
         else:
             obj0 = obj_curr
 
     prob = p.eval(session=sess)
+    tmax = t.eval(session=sess)[np.argmax(prob)]
 
+print('argmax p(t) =',tmax)
 
 # for command line visualization:
 import hipsterplot as hplt
-
 def show(v,stretch=2):
     hplt.plot(np.concatenate([[val]*stretch for val in v]), num_x_chars=stretch*len(v),num_y_chars=10)
 

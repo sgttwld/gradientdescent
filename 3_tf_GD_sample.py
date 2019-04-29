@@ -12,10 +12,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # parameters
 numSamples = 100
 lr = .1
-fixed_precision = True
 precision = 1e-7
-numEp = 3000
-N = 50
+numEp = 10000
+N = 50      
 
 ## utility function
 t = tf.constant(np.linspace(0,2,N))
@@ -31,16 +30,13 @@ p = tf.exp(theta)/tf.reduce_sum(tf.exp(theta))
 ## objective for gradient descent 
 ## (logp makes the auto-derivative correct in case of sampling) 
 obj = tf.reduce_mean(tf.gather(tf.log(p)*U,indices=D))
-#ps = tf.gather(p,indices=D)
-#Us = tf.gather(U,indices=D)
-#obj = tf.reduce_mean(tf.log(ps)*Us)    
-# true objective (only for evaluation)
+
+## true objective (only for evaluation)
 obj_true = tf.reduce_sum(p*U)
 
 ## optimizer and training operator
-optimizer = tf.contrib.opt.NadamOptimizer(learning_rate=lr,beta1=0.9,beta2=0.999,epsilon=1e-08,name='Adam')
-#optimizer = tf.train.AdamOptimizer(learning_rate=lr,beta1=.9, beta2=.999,epsilon=1e-08,name='Adam')
-#optimizer = tf.train.GradientDescentOptimizer(learning_rate=lr)
+optimizer = tf.train.AdamOptimizer(learning_rate=lr,beta1=.9, beta2=.999,epsilon=1e-08,name='Adam')
+# optimizer = tf.train.GradientDescentOptimizer(learning_rate=lr)
 
 train_op = optimizer.minimize(-obj)
 
@@ -52,9 +48,7 @@ with tf.Session() as sess:
  
     ## initializing
     sess.run(init)
-    p_curr = p.eval(session=sess)
-    obj0 = obj_true.eval(session=sess)
-    print('f(t) = ', obj0)
+    obj0 = 0
         
     for n in range(0,numEp):
     
@@ -69,14 +63,15 @@ with tf.Session() as sess:
         obj_curr = obj_true.eval(session=sess)       
         if n % 50 == 0:
             print('ep:',n,'f(t) = ', obj_curr)
-        if fixed_precision:
-            if abs(obj_curr-obj0) < precision:
-                break
-            else:
-                obj0 = obj_curr
+        if abs(obj_curr-obj0) < precision:
+            break
+        else:
+            obj0 = obj_curr
 
     prob = p.eval(session=sess)
+    tmax = t.eval(session=sess)[np.argmax(prob)]
 
+print('argmax p(t) =',tmax)
 
 ## for command line visualization:
 import hipsterplot as hplt
@@ -89,3 +84,5 @@ show(-(np.linspace(0,2,N)**2-2)**2 / 4 + 1,stretch=1)
 
 print('probability distribution')
 show(prob,stretch=1)
+
+

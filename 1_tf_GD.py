@@ -10,7 +10,7 @@ import tensorflow as tf
 # parameters
 numEp = 1000
 lr = .1
-precision = 1e-6
+precision = 1e-10
 
 # variables
 t = tf.Variable(tf.random_normal((1,)))
