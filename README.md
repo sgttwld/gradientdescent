@@ -9,4 +9,4 @@ Simple gradient descent/ascent examples with tensorflow
 
 * [discrete probability, approximate expectation via sampling](https://github.com/sgttwld/gradientdescent/blob/master/3_tf_GD_sample.py): Sampling based implementation to find the discrete probability distribution that maximizes the expected value of a given function. 
 
-* [probability density, approximate expectation via sampling](https://github.com/sgttwld/gradientdescent/blob/master/4_tf_GD_cont.py): Sampling based implementation to find the parameters of a probability distribution that maximizes the expected value of a given utility function
+* [continuous probability density, approximate expectation via sampling](https://github.com/sgttwld/gradientdescent/blob/master/4_tf_GD_cont.py): Sampling based implementation to find the parameters of a probability distribution that maximizes the expected value of a given utility function
