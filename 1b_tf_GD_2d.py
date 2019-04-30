@@ -1,5 +1,5 @@
 """
-Example of gradient descent to find the minimum of a function using tensorflow
+Example of gradient descent to find the maximum of a function of two variables using tensorflow
 Author: Sebastian Gottwald
 Project: https://github.com/sgttwld/gradientdescent
 """
