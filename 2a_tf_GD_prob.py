@@ -1,5 +1,6 @@
 """
-Example of a gradient descent (ascent) implementation in tensorflow to find the discrete probability distribution that maximizes the expected value of a given function
+Example of a gradient descent (ascent) implementation in tensorflow to find the discrete probability 
+distribution that maximizes the expected value of a given function
 Author: Sebastian Gottwald
 Project: https://github.com/sgttwld/gradientdescent
 """

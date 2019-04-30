@@ -13,14 +13,14 @@ lr = .1
 precision = 1e-10
 
 # variables
-t = tf.Variable(tf.random_normal((1,)))
+xy = tf.Variable(tf.random_normal((2,)))
 
 # objective
-obj = (t**2-2)**2
+obj = tf.exp(-(xy[0]**2+xy[1]**2-2)**2)
 
 # optimizer and training operator
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=lr)
-train_op = optimizer.minimize(obj)
+train_op = optimizer.minimize(-obj)
 
 # initializer
 init = tf.global_variables_initializer()
@@ -39,8 +39,8 @@ with tf.Session() as sess:
         
         ## evaluation
         obj_curr = obj.eval(session=sess)
-        t_curr = t.eval(session=sess)
-        print('ep',n,'t = ', t_curr[0],', f(t) = ', obj_curr[0])
+        xy_curr = xy.eval(session=sess)
+        print('ep',n,'(x,y)=', xy_curr,'radius=',np.linalg.norm(xy_curr),'f(x,y)=', obj_curr)
         if abs(obj_curr-obj0) < precision:
             break
         else:
