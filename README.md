@@ -3,7 +3,7 @@ Simple gradient descent/ascent examples with tensorflow
 
 1. **Optimize a function** 
 * [Function of one variable](https://github.com/sgttwld/gradientdescent/blob/master/1a_tf_GD_1d.py): Find the argument that minimizes a function of one variable. 
-* [Function of one variable](https://github.com/sgttwld/gradientdescent/blob/master/1b_tf_GD_2d.py): Find the arguments that maximize a function of two variables. 
+* [Function of two variables](https://github.com/sgttwld/gradientdescent/blob/master/1b_tf_GD_2d.py): Find the arguments that maximize a function of two variables. 
 
 
 2. **Maximize an expected value**
