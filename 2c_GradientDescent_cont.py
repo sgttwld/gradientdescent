@@ -17,7 +17,7 @@ lr = .01
 precision = 1e-7
 numEp = 20000
 
-## placeholders
+## placeholder
 x = tf.placeholder(tf.float64, shape=[None])
 
 ## utility function
@@ -66,7 +66,7 @@ with tf.Session() as sess:
         ## evaluation
         obj_curr = obj_true.eval(session=sess,feed_dict={x: data})       
         if n % 50 == 0:
-            print('ep:',n,'f(t) = ', obj_curr)
+            print('ep:',n,'E_p[U] = ', obj_curr)
         if abs(obj_curr-obj0) < precision:
             break
         else:
@@ -76,7 +76,7 @@ with tf.Session() as sess:
     sigma_fin = sigma.eval(session=sess)
 
 
-# discretizing the distribution for visualization
+## discretizing the distribution for visualization
 xx = np.linspace(0,2,50)
 dens = np.exp(-(xx-mu_fin)**2/(2*sigma_fin**2))/np.sqrt(2*math.pi*sigma_fin**2)
 

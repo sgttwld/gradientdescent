@@ -50,7 +50,7 @@ with tf.Session() as sess:
         ## evaluation
         obj_curr = obj.eval(session=sess)
         if n % 50 == 0:
-            print('ep:',n,'E[U] = ', obj_curr)
+            print('ep:',n,'E_p[U] = ', obj_curr)
         if abs(obj_curr-obj0) < precision:
             break
         else:
