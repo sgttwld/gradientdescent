@@ -21,7 +21,7 @@ numW = 10
 sigma_U = 0.3
 
 ## parameters: algorithm
-numEp = 10000
+numEp = 10000+
 lr = .001
 precision = 1e-7
 numSamples = 250
