@@ -12,6 +12,6 @@ Simple gradient descent/ascent examples with tensorflow
 * [Continuous probability density, approximate expectation via sampling](https://github.com/sgttwld/gradientdescent/blob/master/2c_GradientDescent_cont.py): Sampling based implementation to find the parameters of a probability density that maximizes the expected value of a given utility function.
 
 3. **Maximize Free Energy (information-theoretic bounded rationality)**
-* [discrete probability, fixed prior](https://github.com/sgttwld/gradientdescent/blob/master/3a_GradientDescent_bounded.py): Find the discrete probability distribution that solves the most simple one-step free energy optimization problem of information-theoretic bounded rationality.
-* [discrete probability, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3b_GradientDescent_ratedistortion.py): Find the discrete probability distribution that solves a rate distortion problem.
-* [continuous density, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3c_GradientDescent_ratedistortion_cont.py): Find the parameters of a probability density that solves the rate distortion problem. 
+* [Discrete probability, fixed prior](https://github.com/sgttwld/gradientdescent/blob/master/3a_GradientDescent_bounded.py): Find the discrete probability distribution that solves the most simple one-step free energy optimization problem of information-theoretic bounded rationality.
+* [Discrete probability, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3b_GradientDescent_ratedistortion.py): Find the discrete probability distribution that solves a rate distortion problem.
+* [Continuous density, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3c_GradientDescent_ratedistortion_cont.py): Find the parameters of a probability density that solves the rate distortion problem. 
