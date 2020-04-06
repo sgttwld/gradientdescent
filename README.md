@@ -15,3 +15,5 @@ Simple gradient descent/ascent examples with tensorflow
 * [Discrete probability, fixed prior](https://github.com/sgttwld/gradientdescent/blob/master/3a_GradientDescent_bounded.py): Find the discrete probability distribution that solves the most simple one-step free energy optimization problem of information-theoretic bounded rationality.
 * [Discrete probability, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3b_GradientDescent_ratedistortion.py): Find the discrete probability distribution that solves a rate distortion problem.
 * [Continuous density, optimal prior (rate distortion)](https://github.com/sgttwld/gradientdescent/blob/master/3c_GradientDescent_ratedistortion_cont.py): Find the parameters of a probability density that solves the rate distortion problem. 
+
+__Note:__ The tensorflow implementations are using tensorflow 1, see [tensorflow-2-simple-examples](https://github.com/sgttwld/tensorflow-2-simple-examples) for tensorflow 2 examples.
